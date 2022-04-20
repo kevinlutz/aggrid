@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Grids</h1>
-
 <div id="grids">
   <% @grids.each do |grid| %>
     <%= render grid %>
@@ -10,5 +8,5 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New grid", new_grid_path %>
+<br/>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> <%= link_to "Add New Car", new_grid_path %> </button>
