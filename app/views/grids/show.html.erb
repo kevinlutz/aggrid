@@ -3,8 +3,8 @@
 <%= render @grid %>
 
 <div>
-  <%= link_to "Edit this grid", edit_grid_path(@grid) %> |
-  <%= link_to "Back to grids", grids_path %>
+  <%= link_to "Edit This Car", edit_grid_path(@grid) %> |
+  <%= link_to "Back To All Cars", grids_path %>
 
-  <%= button_to "Destroy this grid", @grid, method: :delete %>
+  <%= button_to "Delete This Car", @grid, method: :delete %>
 </div>

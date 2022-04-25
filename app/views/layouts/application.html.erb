@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aggrid</title>
+    <title>Carmax</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
 
@@ -16,8 +16,20 @@
     <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
   </head>
 
-  <body class="ml-10 mt-10">
-  <h1 class="text-3xl text-blue-600">CarMax Inventory</h1><br/>
+  <body class="bg-gray-200 ml-10 mt-10">
+    <nav class="bg-gray-400 shadow-lg sticky top-0">
+      <div>
+        <span class="text-2xl font-[courier] cursor-pointer">
+          <img class="h-20 inline" src="https://searchlogovector.com/wp-content/uploads/2018/05/carmax-logo-vector.png">
+          <ul>
+            <%= link_to "Home", root_path %>
+            <%= link_to "Inventory", root_path %>
+            <%= link_to "Add New Car", root_path %>
+          </ul>
+        </span>
+      </div>
+    <nav/>
+  <%= link_to "CarMax Inventory", root_path, class:"text-3xl"%> <br/>
    <div id="myGrid" class="ag-theme-alpine" style="height: 600px; width:850px;"></div>
 
   <script type="text/javascript" charset="utf-8">
@@ -62,6 +74,7 @@
       columnDefs: columnDefs,
       rowData: rowData,
       rowSelection: 'multiple',
+      onRowClicked: event => window.open(`grids/${event.data.id}`, '_blank'),
     };
 
   // lookup the container we want the Grid to use
