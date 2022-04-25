@@ -1,0 +1,53 @@
+= form_with(model: grid) do |form|
+  - if grid.errors.any?
+    %div{:style => "color: red"}
+      %h2
+        = pluralize(grid.errors.count, "error")
+        prohibited this grid from being saved:
+      %ul
+        - grid.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.label :make, style: "display: block", autofocus: true
+    = form.text_field :make
+  %div
+    = form.label :model, style: "display: block", autofocus: true
+    = form.text_field :model
+  %div
+    = form.label :price, style: "display: block", autofocus: true
+    = form.text_field :price
+  %div
+    = form.label :color, style: "display: block", autofocus: true
+    = form.text_field :color
+  %div
+    = form.label :sunroof, "Sunroof"
+    = form.check_box :sunroof
+  %div
+    = form.label :leather, "Leather"
+    = form.check_box :leather
+  %div
+    = form.label :keyless_entry, "Keyless Entry"
+    = form.check_box :keyless_entry
+  %div
+    = form.label :heated_seats, "Heated Seats"
+    = form.check_box :heated_seats
+  %div
+    = form.label :backup_camera, "Backup Camera"
+    = form.check_box :backup_camera
+  %div
+    = form.label :bluetooth_wireless, "Bluetoothe Wireless"
+    = form.check_box :bluetooth_wireless
+  %div
+    = form.label :navigation_system, "Navigation System"
+    = form.check_box :navigation_system
+  %div
+    = form.label :power_steering, "Power Steering"
+    = form.check_box :power_steering
+  %div
+    = form.label :dual_air_bags, "Dual Air Bags"
+    = form.check_box :dual_air_bags
+  %div
+    = form.label :roof_rack, "Roof Rack"
+    = form.check_box :roof_rack
+  %div
+    = form.submit
