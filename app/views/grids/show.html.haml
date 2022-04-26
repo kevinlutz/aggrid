@@ -1,8 +1,8 @@
 %p{:style => "color: green"}= notice
 = render @grid
 %div
-  = link_to "Edit This Car", edit_grid_path(@grid)
-  |
-  \#{link_to "Back To All Cars", grids_path}
+  = link_to "Edit This Car", edit_grid_path(@grid) 
+  %br
+  \#{link_to "See All Cars", grids_path}
   
   \#{button_to "Delete This Car", @grid, method: :delete}

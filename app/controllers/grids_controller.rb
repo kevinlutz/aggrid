@@ -1,13 +1,30 @@
 class GridsController < ApplicationController
   before_action :set_grid, only: %i[ show edit update destroy ]
 
+  def common
+    @make = Faker::Vehicle.make
+    @model = Faker::Vehicle.model
+    @vin = Faker::Vehicle.vin
+    @color = Faker::Vehicle.color
+    @drive_type = Faker::Vehicle.drive_type
+    @fuel_type = Faker::Vehicle.fuel_type
+    @transmission = Faker::Vehicle.transmission
+    @mileage = Faker::Vehicle.mileage
+    @engine_size = Faker::Vehicle.engine_size
+  end
+
   # GET /grids or /grids.json
   def index
     @grids = Grid.all
   end
 
+  def inventory
+
+  end
+
   # GET /grids/1 or /grids/1.json
   def show
+    @grid = Grid.find(params[:id])
   end
 
   # GET /grids/new

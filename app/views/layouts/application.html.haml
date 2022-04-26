@@ -13,16 +13,16 @@
     %script{:src => "https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"}
     %link{:href => "https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css", :rel => "stylesheet"}/
     %link{:href => "https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css", :rel => "stylesheet"}/
-  %body.bg-gray-200.ml-10.mt-10
-    %nav.bg-gray-400.shadow-lg.sticky-0.top-0
+  %body
+    %nav.bg-whitesmoke-400.shadow-lg.sticky.top-0
       %div
-        %span.text-2xl.cursor-pointer{:class => "font-[courier]"}
-          %img.h-20.inline{:src => "https://searchlogovector.com/wp-content/uploads/2018/05/carmax-logo-vector.png"}/
-          %ul
-            = link_to "Home", root_path
-            = link_to "Inventory", root_path
-      %nav
-      = link_to "CarMax Inventory", root_path, class:"text-3xl"
+        %span.flex.flex-row.text-2xl.cursor-pointer{:class => "font-[courier]"}
+          %img.mt-5.ml-10.mr-20.h-20.inline{:src => "https://searchlogovector.com/wp-content/uploads/2018/05/carmax-logo-vector.png"}/
+          %ul.flex.flex-row.items-center
+            %li.mt-5.mr-20= link_to "Home", root_path
+            %li.mt-5= link_to "Inventory", grids_path
+            %li.mt-5.ml-20= link_to "Sign In"
+            %li.mt-5.ml-20= link_to "Sign Up"
       %br/
       
     = yield
