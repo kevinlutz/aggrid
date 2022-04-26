@@ -1,0 +1,16 @@
+version: "3"
+services:
+  hasura:
+    image: hasura/graphql-engine:v2.1.1.cli-migrations-v3
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres@localhost:5432/carmax_development
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      HASURA_GRAPHQL_ADMIN_SECRET: "secret"
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "anonymous"
+      HASURA_GRAPHQL_JWT_SECRET: '{"type":"HS256", "key": "vMLMBFYdppfuZ/kbCP2e+dr/psjmbBB0UYFLq3EWJCg="}'
+
+volumes:
+  db_data:

@@ -1,4 +1,4 @@
-!!!
+
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -14,67 +14,15 @@
     %link{:href => "https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css", :rel => "stylesheet"}/
     %link{:href => "https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css", :rel => "stylesheet"}/
   %body.bg-gray-200.ml-10.mt-10
-    %nav.bg-gray-400.shadow-lg.sticky.top-0
+    %nav.bg-gray-400.shadow-lg.sticky-0.top-0
       %div
         %span.text-2xl.cursor-pointer{:class => "font-[courier]"}
           %img.h-20.inline{:src => "https://searchlogovector.com/wp-content/uploads/2018/05/carmax-logo-vector.png"}/
           %ul
             = link_to "Home", root_path
             = link_to "Inventory", root_path
-            = link_to "Add New Car", root_path
       %nav
       = link_to "CarMax Inventory", root_path, class:"text-3xl"
       %br/
-      #myGrid.ag-theme-alpine{:style => "height: 600px; width:850px;"}
-      %script{:charset => "utf-8", :type => "text/javascript"}
-        :cdata
-          \// specify the columns
-          const columnDefs = [
-          { field: "make", sortable: true, filter: true, checkboxSelection: true, resizable: true },
-          { field: "model", sortable: true, filter: true, resizable: true },
-          { field: "price", sortable: true, filter: true, resizable: true },
-          { field: "color", sortable: true, filter: true, resizable: true }
-          ];
-          
-          \// specify the data
-          const rowData = [
-          { make: "Mercedes", model: "S550", price: 80000, color: "Blue" },
-          { make: "Tesla", model: "S", price: 60000, color: "Black" },
-          { make: "Porsche", model: "Boxster", price: 120000, color: "Red" },
-          { make: "Toyota", model: "Tacoma", price: 40000, color: "Green" },
-          { make: "Maserati", model: "Sportster", price: 130000, color: "Tan" },
-          { make: "Audi", model: "A4", price: 50000, color: "Yellow" },
-          { make: "Volkswagen", model: "Jetta", price: 30000, color: "Orange" },
-          { make: "Hyundai", model: "Genesis", price: 90000, color: "Blue" },
-          { make: "Kia", model: "Telluride", price: 60000, color: "Black" },
-          { make: "Lincoln", model: "Navigator", price: 80000, color: "Gray" },
-          { make: "Jeep", model: "Wrangler", price: 70000, color: "White" },
-          { make: "BMW", model: "M6", price: 100000, color: "White" },
-          { make: "Acura", model: "MDX", price: 40000, color: "Black" },
-          { make: "Tesla", model: "X", price: 80000, color: "Red" },
-          { make: "Porsche", model: "911", price: 120000, color: "Black" },
-          { make: "Toyota", model: "Tundra", price: 40000, color: "Green" },
-          { make: "Maserati", model: "Sportster", price: 120000, color: "Green" },
-          { make: "Audi", model: "A6", price: 50000, color: "Black" },
-          { make: "Volkswagen", model: "Jetta", price: 30000, color: "Orange" },
-          { make: "Hyundai", model: "Sonata", price: 90000, color: "Blue" },
-          { make: "Kia", model: "Telluride", price: 70000, color: "Black" },
-          { make: "Lincoln", model: "Aviator", price: 80000, color: "Yellow" },
-          { make: "Jeep", model: "Gladiator", price: 70000, color: "Blue" },
-          { make: "BMW", model: "M5", price: 100000, color: "Black" },
-          ];
-          
-          \// let the grid know which columns and what data to use
-          const gridOptions = {
-          columnDefs: columnDefs,
-          rowData: rowData,
-          rowSelection: 'multiple',
-          onRowClicked: event => window.open(`grids/${event.data.id}`, '_blank'),
-          };
-          
-          \// lookup the container we want the Grid to use
-          const eGridDiv = document.querySelector('#myGrid');
-          
-          \// create the grid passing in the div to use together with the columns & data we want to use
-          new agGrid.Grid(eGridDiv, gridOptions);
-      = yield
+      
+    = yield
